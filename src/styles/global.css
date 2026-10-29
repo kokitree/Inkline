@@ -68,7 +68,16 @@ button { font: inherit; color: inherit; cursor: pointer; }
 .col { width: min(100% - 2 * var(--gutter), var(--col)); margin-inline: auto; }
 
 /* ---------- Header / footer ---------- */
-.site-header { padding-block: 1.25rem; border-bottom: 1px solid var(--line); }
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  padding-block: 1.25rem;
+  border-bottom: 1px solid var(--line);
+  background: color-mix(in srgb, var(--bg) 88%, transparent);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+}
 .site-header .frame { display: flex; align-items: center; justify-content: space-between; gap: 1.25rem; flex-wrap: wrap; }
 .brand { display: inline-flex; align-items: center; gap: 0.5rem; font: 700 1.45rem/1 var(--font-serif); text-decoration: none; letter-spacing: -0.015em; }
 .mark { width: 1.9rem; height: 1.5rem; flex: none; }
